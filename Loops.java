@@ -14,6 +14,14 @@ public class Loops {
         return "Prime factorisation of" + answer + "1";
     }
     
+    public static double pi(int n) {
+        double sum = 0;
+        for (int i = 0; i <= Math.pow(10, n); i++) {
+           sum += Math.pow(-1, i) / (2*i+1);
+        }
+        return sum*4;
+    }
+   
     public static void main(String[] args){
         
         // Test-Code für Teilaufgabe c)
@@ -25,9 +33,9 @@ public class Loops {
 
         // Test-Code für Teilaufgabe d)
         System.out.println("Aufgabe d)");
-        //for (int n = 0; n < 12; n++){
-            //System.out.println("Pi approximated to " + n + " digits with pi()  is " + pi(n));
+        for (int n = 0; n < 12; n++){
+            System.out.println("Pi approximated to " + n + " digits with pi()  is " + pi(n));
         }
-        //System.out.println();
+        System.out.println();
     }
-//}
+}

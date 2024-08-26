@@ -2,12 +2,35 @@ public class Arrayz {
     
     // TODO: Schreibe hier die Methoden für die Teilaufgaben.
     
+
+    // TODO: Schreibe hier die Methoden für die Teilaufgaben.
+    public static double[] sort(double[] input_list) {
+        boolean swapped;
+        for (int j = 0; j < input_list.length - 1; j++) {
+            swapped = false;
+ 
+            for (int i = 0; i < input_list.length - 1; i++) {
+ 
+                if (input_list[i] > input_list[i + 1]) {
+                    double temp = input_list[i];
+                    input_list[i] = input_list[i + 1];
+                    input_list[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (swapped == false) {
+                break;
+            }
+        }
+        return input_list;
+    }
+
     public static void main(String[] args){
         
         // Test-Code für Teilaufgabe e)
         System.out.println("Aufgabe e)");
-        System.out.println(hours(3));
-        System.out.println(hours(75));
+        System.out.println(sort(3));
+        System.out.println(sorts(75));
         // TODO: Schreibe mehr Testcode
         System.out.println();
 
