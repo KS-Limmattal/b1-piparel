@@ -24,13 +24,40 @@ public class Arrayz {
         }
         return input_list;
     }
+    public static boolean isMagicSquare(int[][] square) {
+        boolean magicSquare = false; 
+        int square_end = square.length;
+        int line_sum = 0;
+        int col_sum = 0;
+        int dia_sum = 0;
+
+        for (int i = 0; i < square_end; i++) {
+            line_sum = line_sum + square[i][0];
+            for (int k = 0; k < square_end - 1; k ++){
+                col_sum = col_sum + square[0][k];
+                dia_sum = dia_sum + square[i][k];
+            }
+        }
+        System.out.println(line_sum);
+        System.out.println(col_sum);
+        System.out.println(dia_sum);
+
+        if (line_sum + col_sum + dia_sum == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        
+        }
+           
 
     public static void main(String[] args){
         
         // Test-Code für Teilaufgabe e)
         System.out.println("Aufgabe e)");
-        System.out.println(sort(3));
-        System.out.println(sorts(75));
+        double[] nr = {123, 356.131231, 1594};
+        System.out.println(sort(nr));
         // TODO: Schreibe mehr Testcode
         System.out.println();
 
