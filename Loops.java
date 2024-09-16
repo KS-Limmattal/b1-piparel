@@ -1,13 +1,33 @@
 public class Loops {
     
     // TODO: Schreibe hier die Methoden für die Teilaufgaben.
+    public static String primeFactorisation(int n){
+        String answer = "";
+        for(int i = 2; i<=n;i++){
+            if (n % i == 0){
+                answer = answer + i + "*";
+                n = n/i;
+                i = 2;
+            }
+
+        }
+        return "Prime factorisation of" + answer + "1";
+    }
     
+    public static double pi(int n) {
+        double sum = 0;
+        for (int i = 0; i <= Math.pow(10, n); i++) {
+           sum += Math.pow(-1, i) / (2*i+1);
+        }
+        return sum*4;
+    }
+   
     public static void main(String[] args){
         
         // Test-Code für Teilaufgabe c)
         System.out.println("Aufgabe c)");
-        System.out.println(hours(3));
-        System.out.println(hours(75));
+        System.out.println(primeFactorisation(12));
+        System.out.println(primeFactorisation(82));
         // TODO: Schreibe mehr Testcode
         System.out.println();
 
